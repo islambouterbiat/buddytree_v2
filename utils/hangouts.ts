@@ -1,0 +1,1 @@
+export const hangouts:Array=[{title:"Gender Rights & Equality",imageUrl:""},{title:"Gender Rights & Equality",imageUrl:""}]
