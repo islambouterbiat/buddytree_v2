@@ -15,9 +15,12 @@ import pc from "../assets/images/upcoming_hangouts/hero.png"
 import heart from "../assets/images/upcoming_hangouts/circled_heart.png"
 import hangouts_bubble from "../assets/images/upcoming_hangouts/bubble.png"
 import hangout_logo from "../assets/images/upcoming_hangouts/Quote Mark.png"
-
+import topics_bg from "../assets/images/Mask group.png"
+import phone1 from "../assets/images/Phone Mockup 1.png"
+import phone2 from "../assets/images/Phone Mockup 2.png"
 
 const Home: NextPage = () => {
+  const topics= ["Goals","Motivation","Trust","Vulnerability","Wealth","Sex","Drugs","Movies","Climate","Childfree","Vaccine","Guns","Cancel" ,"culture" ,"Music","Borders & nations","Fear","Confidence","Meaning","Purpose"]
   return (
     <div className="min-h-screen">
       <Head>
@@ -90,18 +93,44 @@ const Home: NextPage = () => {
               <div className='absolute top-16 left-56'>
                 <Image src={hangout_logo} height={190} width={220} className='object-cover'/>
               </div>
-              <div className="relative flex items-start gap-32">
+              <div className="relative flex items-start gap-32 overflow-visible">
                 <div className='w-72 h-full'>
                   <h1 className='text-DarkBlue text-2xl font-bold leading-stretch'>Join our community of Buddytree members from around the world.</h1>
                   <GreenButton text="GET STARTED FOR FREE" className="absolute bottom-0"/>
                 </div>
-                <div className='flex flex-1 flex-nowrap gap-8 overflow-x-auto scrolltype'>
+                <div className='flex flex-1 flex-nowrap gap-8 overflow-x-auto overflow-y-visible scrolltype'>
                   {feedbacks.map((feedback)=>(
                     <FeedbackCard key={feedback.id} feedback={feedback} />
                   ))}
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+        <section id='explore_more_section' className='relative px-24 py-32 max-w-7xl mx-auto bg-Blue'>
+          <div className='absolute top-0 right-0 z-0'>
+            <Image src={topics_bg} height={464} width={680} className='object-cover'/>
+          </div>
+          <div className='flex justify-between items-start gap-20'>
+            <div className='basis-1/2'>
+              <h1 className='text-2xl font-bold text-white mb-20'>Humans are social creatures. What discussions would you like to have with others?</h1>
+              <GreenButton text='EXPLORE MORE TOPICS'/>
+            </div>
+            <div className='basis-1/2 flex flex-wrap gap-3 items-center relative'>
+              {topics.map((topic,i)=>(
+                <button key={i} className='px-2 py-1 text-sm text-LightGreen bg-transparent border border-white/50 rounded'>{topic}</button>
+              ))}
+            </div>
+          </div>
+        </section>
+        <section id='last_section' className="px-24 pt-32 max-w-7xl mx-auto bg-Grey/5">
+          <div className='flex gap-20'>
+            <Image src={phone1} height={500} width={350} className='object-cover'/>
+            <div className='text-center'>
+              <h1 className='text-2xl font-bold text-DarkBlue mb-20 w-[23rem] whitspace-wrap'>Have meaningful discussions with amazing new friends.</h1>
+              <GreenButton text='GET STARTED FOR FREE'/>
+            </div>
+            <Image src={phone2} height={500} width={350} className='object-cover'/>
           </div>
         </section>
       </main>
