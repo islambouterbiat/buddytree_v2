@@ -5,6 +5,7 @@ import GreenButton from '../components/general_components/GreenButton'
 import StepCard from '../components/general_components/StepCard'
 
 import { steps } from '../utils/steps'
+import { companies } from '../utils/companies'
 import bluebubble from "../assets/images/hero/blue_bubble.png"
 
 const Home: NextPage = () => {
@@ -39,6 +40,16 @@ const Home: NextPage = () => {
           </div>
           <div className='text-center mt-16'>
             <GreenButton text="GET STARTED FOR FREE"/>
+          </div>
+        </section>
+        <section id='trusted_companies' className='relative px-24 mt-10 max-w-7xl mx-auto'>
+          <div className='w-full flex gap-12 flex-col md:flex-row items-center justify-between px-20 py-6 border-t border-Grey/10'>
+            <h1 className='text-DarkBlue text-xl font-semibold whitespace-nowrap'>Backed By</h1>
+            <div className='w-full flex items-center justify-between'>
+              {companies.map((company)=>(
+                <Image key={company.id} src={company.imageUrl} width={70} height={20} className='object-contain'/>
+              ))}
+            </div>
           </div>
         </section>
       </main>
