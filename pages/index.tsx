@@ -3,13 +3,18 @@ import Head from 'next/head'
 import Image from 'next/image'
 import GreenButton from '../components/general_components/GreenButton'
 import StepCard from '../components/general_components/StepCard'
+import HangoutCard from '../components/upcoming_hangouts/HangoutCard'
+import FeedbackCard from '../components/general_components/FeedbackCard'
 
 import { steps } from '../utils/steps'
 import { companies } from '../utils/companies'
+import { hangouts } from '../utils/hangouts'
+import { feedbacks } from '../utils/feedbacks'
 import bluebubble from "../assets/images/hero/blue_bubble.png"
 import pc from "../assets/images/upcoming_hangouts/hero.png"
 import heart from "../assets/images/upcoming_hangouts/circled_heart.png"
 import hangouts_bubble from "../assets/images/upcoming_hangouts/bubble.png"
+import hangout_logo from "../assets/images/upcoming_hangouts/Quote Mark.png"
 
 
 const Home: NextPage = () => {
@@ -57,11 +62,11 @@ const Home: NextPage = () => {
           </div>
         </section>
         <section id='hangouts_section' className='relative bg-Grey/5 px-24'>
-          <div className='absolute top-20 right-40 z-0'>
-            <Image src={hangouts_bubble} height={543} width={700} />
+          <div className='absolute top-10 right-56 z-0'>
+            <Image src={hangouts_bubble} height={800} width={860} />
           </div>
           <div className='max-w-7xl mx-auto'>
-            <div className='py-24 px-2 flex items-start justify-between'>
+            <div className='pt-24 px-2 flex items-start justify-between'>
               <Image src={pc} height={280} width={420} alt='computer' className='object-cover' />
               <div className='pr-40 pt-12'>
                 <h2 className='text-2xl font-bold text-DarkBlue'>The magic formula of <br/> Buddytree is</h2>
@@ -73,10 +78,28 @@ const Home: NextPage = () => {
                 </div>
               </div>
             </div>
-            <div>
+            <div className='mt-20'>
               <h1 className='text-2xl font-bold text-DarkBlue'>Upcoming Hangouts</h1>
-              <div className='mt-12 flex '>
-
+              <div className='pt-20 pb-12 w-full flex flex-nowrap gap-8 overflow-x-auto scrolltype'>
+                {hangouts.map((hangout)=>(
+                  <HangoutCard key={hangout.id} hangout={hangout}/>
+                ))}
+              </div>
+            </div>
+            <div id='community' className='py-32 overflow-visible relative'>
+              <div className='absolute top-16 left-56'>
+                <Image src={hangout_logo} height={190} width={220} className='object-cover'/>
+              </div>
+              <div className="relative flex items-start gap-32">
+                <div className='w-72 h-full'>
+                  <h1 className='text-DarkBlue text-2xl font-bold leading-stretch'>Join our community of Buddytree members from around the world.</h1>
+                  <GreenButton text="GET STARTED FOR FREE" className="absolute bottom-0"/>
+                </div>
+                <div className='flex flex-1 flex-nowrap gap-8 overflow-x-auto scrolltype'>
+                  {feedbacks.map((feedback)=>(
+                    <FeedbackCard key={feedback.id} feedback={feedback} />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
