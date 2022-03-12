@@ -13,6 +13,10 @@ module.exports = {
         Grey: '#515151',
         LightGrey: '#9C9C9C',
       },
+      spacing: {
+        22: '5.5rem',
+        34: '8.5rem',
+      },
     },
   },
   plugins: [],
