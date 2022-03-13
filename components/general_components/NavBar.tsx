@@ -2,7 +2,7 @@ import React from 'react'
 
 const NavBar = () => {
   return (
-    <nav className='px-24 bg-Blue w-full'>
+    <nav className='px-8 md:px-24 bg-Blue w-full'>
       <div className='relative h-20 flex items-center justify-between border-b border-gray-50/20 max-w-7xl mx-auto z-30'>
         <h1 className='text-xl text-white font-bold'>Buddytree</h1>
         <button className='bg-transparent text-xs px-5 py-2 border border-white rounded text-white z-30'>GET STARTED FOR FREE</button>
