@@ -5,6 +5,7 @@ import GreenButton from '../components/general_components/GreenButton'
 import StepCard from '../components/general_components/StepCard'
 import HangoutCard from '../components/upcoming_hangouts/HangoutCard'
 import FeedbackCard from '../components/general_components/FeedbackCard'
+import FeedbackSlider from '../components/general_components/FeedbackSlider'
 
 import { steps } from '../utils/steps'
 import { companies } from '../utils/companies'
@@ -24,6 +25,7 @@ import hangout_logo from "../assets/images/upcoming_hangouts/Quote Mark.png"
 import topics_bg from "../assets/images/Mask group.png"
 import phone1 from "../assets/images/Phone Mockup 1.png"
 import phone2 from "../assets/images/Phone Mockup 2.png"
+
 
 const Home: NextPage = () => {
   const topics= ["Goals","Motivation","Trust","Vulnerability","Wealth","Sex","Drugs","Movies","Climate","Childfree","Vaccine","Guns","Cancel" ,"culture" ,"Music","Borders & nations","Fear","Confidence","Meaning","Purpose"]
@@ -101,7 +103,7 @@ const Home: NextPage = () => {
           <div className='max-w-7xl mx-auto'>
             <div className='pt-24 px-2 flex flex-col md:flex-row items-start justify-between'>
               <Image src={pc} height={280} width={420} alt='computer' className='object-cover' />
-              <div className='pr-40 pt-12'>
+              <div className='md:pr-40 pt-12'>
                 <h2 className='text-2xl font-bold text-DarkBlue'>The magic formula of <br/> Buddytree is</h2>
                 <div className='relative flex items-center mt-10 gap-8'>
                   <div className='md:absolute -left-16 -bottom-2.5'>
@@ -124,46 +126,46 @@ const Home: NextPage = () => {
                 <Image src={hangout_logo} height={190} width={220} className='object-cover'/>
               </div>
               <div className="relative flex flex-col md:flex-row items-start gap-16 md:gap-32 overflow-visible">
-                <div className='md:w-72 h-full'>
+                <div className='md:w-72 flex-none h-full'>
                   <h1 className='text-DarkBlue text-2xl font-bold leading-stretch'>Join our community of Buddytree members from around the world.</h1>
                   <GreenButton text="GET STARTED FOR FREE" className="md:absolute bottom-0 w-full md:w-auto mt-10 md:mt-0"/>
                 </div>
-                <div className='flex flex-1 w-full flex-nowrap gap-8 overflow-x-auto scrolltype'>
-                  {feedbacks.map((feedback)=>(
-                    <FeedbackCard key={feedback.id} feedback={feedback} />
-                  ))}
-                </div>
+                <FeedbackSlider feedbacks={feedbacks}/>
               </div>
             </div>
           </div>
         </section>
-        <section id='explore_more_section' className='relative px-8 md:px-24 pt-12 pb-20 md:py-32 max-w-7xl mx-auto bg-Blue'>
+        <section id='explore_more_section' className='relative px-8 md:px-24 pt-12 pb-20 md:py-32  bg-Blue'>
           <div className='absolute top-0 right-0 z-0'>
             <Image src={topics_bg} height={464} width={680} className='object-cover'/>
           </div>
-          <div className='flex flex-col md:flex-row justify-between items-start gap-20'>
-            <div className='basis-1/2 relative'>
-              <h1 className='text-2xl font-bold text-white mb-10 md:mb-20'>Humans are social creatures. What discussions would you like to have with others?</h1>
-              <GreenButton text='EXPLORE MORE TOPICS' className='w-full md:w-auto'/>
-            </div>
-            <div className='basis-1/2 flex flex-wrap gap-3 items-center relative'>
-              {topics.map((topic,i)=>(
-                <button key={i} className='px-2 py-1 text-sm text-LightGreen bg-transparent border border-white/50 rounded'>{topic}</button>
-              ))}
+          <div className="max-w-7xl mx-auto">
+            <div className='flex flex-col md:flex-row justify-between items-start gap-20'>
+              <div className='basis-1/2 relative'>
+                <h1 className='text-2xl font-bold text-white mb-10 md:mb-20'>Humans are social creatures. What discussions would you like to have with others?</h1>
+                <GreenButton text='EXPLORE MORE TOPICS' className='w-full md:w-auto'/>
+              </div>
+              <div className='basis-1/2 flex flex-wrap gap-3 items-center relative'>
+                {topics.map((topic,i)=>(
+                  <button key={i} className='px-2 py-1 text-sm text-LightGreen bg-transparent border border-white/50 rounded'>{topic}</button>
+                ))}
+              </div>
             </div>
           </div>
         </section>
-        <section id='last_section' className="relative px-8 md:px-24 pt-16 md:pt-32 max-w-7xl mx-auto bg-Grey/5">
-          <div className='flex flex-col md:flex-row md:gap-20'>
-            <div className="order-2 md:order-1">
-              <Image src={phone1} height={500} width={350} className='object-cover'/>
-            </div>
-            <div className='text-center order-1 md:order-2'>
-              <h1 className='text-2xl font-bold text-DarkBlue md:mb-20 md:w-[23rem] whitspace-wrap'>Have meaningful discussions with amazing new friends.</h1>
-              <GreenButton text='GET STARTED FOR FREE' className='relative top-44 md:static w-full md:w-auto'/>
-            </div>
-            <div className="hidden md:block order-3">
-              <Image src={phone2} height={500} width={350} className='object-cover'/>
+        <section id='last_section' className="relative px-8 md:px-24 pt-16 md:pt-32 bg-Grey/5">
+          <div className='max-w-7xl mx-auto'>
+            <div className='flex flex-col md:flex-row md:gap-20'>
+              <div className="order-2 md:order-1">
+                <Image src={phone1} height={500} width={350} className='object-cover'/>
+              </div>
+              <div className='text-center order-1 md:order-2'>
+                <h1 className='text-2xl font-bold text-DarkBlue md:mb-20 md:w-[23rem] whitspace-wrap'>Have meaningful discussions with amazing new friends.</h1>
+                <GreenButton text='GET STARTED FOR FREE' className='relative top-44 md:static w-full md:w-auto'/>
+              </div>
+              <div className="hidden md:block order-3">
+                <Image src={phone2} height={500} width={350} className='object-cover'/>
+              </div>
             </div>
           </div>
         </section>
