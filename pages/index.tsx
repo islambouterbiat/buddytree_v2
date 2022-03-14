@@ -15,6 +15,7 @@ import hero_1 from "../assets/images/hero/1.png"
 import hero_2 from "../assets/images/hero/2.png"
 import hero_3 from "../assets/images/hero/3.png"
 import hero_4 from "../assets/images/hero/4.png"
+import video from "../assets/images/hero/video.png"
 import bluebubble from "../assets/images/hero/blue_bubble.png"
 import bluebubble_phone from "../assets/images/hero/blue_bubble_phone.png"
 import hero_button from "../assets/images/hero/button.png"
@@ -37,7 +38,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className="w-full mx-auto ">
-        <section id='hero_section' className='relative bg-Blue pt-20 pb-20 md:pb-32 px-8 md:px-24'>
+        <section id='hero_section' className='relative bg-Blue pt-10 md:pt-20 pb-20 md:pb-32 px-8 md:px-24 mx-auto'>
           <div className='hidden md:block absolute -top-20 right-0 z-0'>
             <Image src={bluebubble} height={604} width={760} />
           </div>
@@ -49,24 +50,13 @@ const Home: NextPage = () => {
               <h1 className='text-2xl font-bold text-white mb-14'>A space to have meaningful <br/> discussions and make long-lasting <br/> friendships.</h1>
               <GreenButton text="GET STARTED FOR FREE" className="w-full md:w-auto"/>
             </div>
-            <div className='text-center relative h-64 md:h-full w-full basis-1/2 order-1 md:order-2'>
+            <div className='text-center relative h-full w-full basis-1/2 order-1 md:order-2 my-16 md:my-auto pb-12 md:pb-0'>
+              <div className='absolute -top-16 md:right-28 md:-top-20'>
+                <Image src={video} height={250} width={370} alt='intro video thumbnail' className='object-cover'/>
+              </div>
               <button className='rounded-full z-20 relative hover:scale-110 transition ease-in-out duration-300'>
                 <Image src={hero_button} height={70} width={70} alt='click to play intro video'/>
               </button>
-              <div className="">
-                <div className='absolute -top-20 left-6'>
-                  <Image src={hero_1} height={112} width={128} alt='hero image' className='object-cover'/>
-                </div>
-                 <div className='absolute -top-20 right-32'>
-                  <Image src={hero_2} height={115} width={150} alt='hero image' className='object-cover'/>
-                </div>
-                 <div className='absolute -bottom-20 left-32'>
-                  <Image src={hero_3} height={112} width={140} alt='hero image' className='object-cover'/>
-                </div>
-                 <div className='absolute -bottom-36 right-32'>
-                  <Image src={hero_4} height={112} width={133} alt='hero image' className='object-cover'/>
-                </div>
-              </div>
             </div>
           </div>
         </section>
