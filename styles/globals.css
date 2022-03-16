@@ -2,40 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap');
-
 * {
-    font-family: "Dosis",
-        sans-serif;
-    letter-spacing: 1px;
+  font-family: 'Dosis', sans-serif;
+  letter-spacing: 1px;
 }
-
 
 .scrolltype::-webkit-scrollbar {
-    background: #e6e6e6;
-    height: 5px;
-    border-radius: 1rem;
+  background: #e6e6e6;
+  height: 5px;
+  border-radius: 1rem;
 }
 
-
 .scrolltype::-webkit-scrollbar-thumb {
-    background: #10537D;
-    /* outline: 1px solid slategrey; */
-    border-radius: 1rem;
-    width: 1rem;
+  background: #10537d;
+  /* outline: 1px solid slategrey; */
+  border-radius: 1rem;
+  width: 1rem;
 }
 
 .green_line::after {
-  content: "";
+  content: '';
   height: 1px;
   width: 14rem;
-  background-color: #3CB371;
+  background-color: #3cb371;
   position: absolute;
   top: 7rem;
-  right:-9rem;
+  right: -9rem;
 }
-.green_line:last-child::after{display: none;}
+.green_line:last-child::after {
+  display: none;
+}
 
 @media (max-width: 640px) {
-    .green_line::after {display: none;}
+  .green_line::after {
+    display: none;
+  }
+}
+
+button {
+  transition: all 150ms ease-in;
+}
+button:hover {
+  transform: scale(1.05);
 }
