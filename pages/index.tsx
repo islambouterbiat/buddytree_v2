@@ -45,10 +45,10 @@ const Home: NextPage = () => {
           </div>
           <div className='flex flex-col md:flex-row items-center max-w-7xl mx-auto relative overflow-visible'>
             <div className='hidden md:block absolute -top-40 -right-24 z-0'>
-              <Image src={bluebubble} height={604} width={760} />
+              <Image src={bluebubble} height={625} width={760} />
             </div>
             <div className='order-2 md:order-1 basis-1/2'>
-              <h1 className='text-2xl font-bold text-white mb-14'>A space to have meaningful <br/> discussions and make long-lasting <br/> friendships.</h1>
+              <h1 className='text-3xl font-bold text-white mb-14'>A space to have meaningful <br/> discussions and make long-lasting <br/> friendships.</h1>
               <GreenButton text="GET STARTED FOR FREE" className="w-full md:w-auto"/>
             </div>
             <div className='text-center relative h-full w-full basis-1/2 order-1 md:order-2 my-16 md:my-auto pb-12 md:pb-0'>
@@ -63,7 +63,7 @@ const Home: NextPage = () => {
         </section>
         <section id='how_buddytree_works' className='relative px-8 md:px-24 py-20 max-w-7xl mx-auto'>
           <div className='flex flex-col md:flex-row justify-start md:justify-between md:items-center gap-3 md:gap-0'>
-            <h1 className='text-2xl font-bold text-DarkBlue'>How Buddytree Works</h1>
+            <h1 className='text-3xl font-bold text-DarkBlue'>How Buddytree Works</h1>
             <p className='font-semibold text-sm text-Grey'>You’re born into your family, but your Buddytree is yours to create.</p>
           </div>
           <div className='flex flex-col md:flex-row justify-between mt-16 gap-8 md:gap-0'>
@@ -108,7 +108,7 @@ const Home: NextPage = () => {
               </div>
             </div>
             <div className='mt-20'>
-              <h1 className='text-2xl font-bold text-DarkBlue'>Upcoming Hangouts</h1>
+              <h1 className='text-3xl font-bold text-DarkBlue'>Upcoming Hangouts</h1>
               <div className='pt-6 md:pt-20 pb-12 w-full flex flex-nowrap gap-8 overflow-x-auto scrolltype'>
                 {hangouts.map((hangout)=>(
                   <HangoutCard key={hangout.id} hangout={hangout}/>
@@ -121,7 +121,7 @@ const Home: NextPage = () => {
               </div>
               <div className="relative flex flex-col md:flex-row items-start justify-between gap-16 md:gap-32 overflow-visible">
                 <div className='md:w-72 flex-none h-full'>
-                  <h1 className='text-DarkBlue text-2xl font-bold leading-stretch'>Join our community of Buddytree members from around the world.</h1>
+                  <h1 className='text-DarkBlue text-3xl font-bold leading-stretch'>Join our community of Buddytree members from around the world.</h1>
                   <GreenButton text="GET STARTED FOR FREE" className="md:absolute bottom-0 w-full md:w-auto mt-10 md:mt-0"/>
                 </div>
                 <FeedbackSlider feedbacks={feedbacks}/>
@@ -139,7 +139,7 @@ const Home: NextPage = () => {
             </div>
             <div className='flex flex-col md:flex-row justify-between items-start gap-20'>
               <div className='basis-1/2 relative'>
-                <h1 className='text-2xl font-bold text-white mb-10 md:mb-20'>Humans are social creatures. What discussions would you like to have with others?</h1>
+                <h1 className='text-3xl font-bold text-white mb-10 md:mb-20'>Humans are social creatures. What discussions would you like to have with others?</h1>
                 <GreenButton text='EXPLORE MORE TOPICS' className='w-full md:w-auto'/>
               </div>
               <div className='basis-1/2 flex flex-wrap gap-3 items-center relative'>
@@ -157,7 +157,7 @@ const Home: NextPage = () => {
                 <Image src={phone1} height={500} width={350} className='object-cover'/>
               </div>
               <div className='text-center order-1 md:order-2'>
-                <h1 className='text-2xl font-bold text-DarkBlue md:mb-20 md:w-[23rem] whitspace-wrap'>Have meaningful discussions with amazing new friends.</h1>
+                <h1 className='text-3xl font-bold text-DarkBlue md:mb-20 md:w-[23rem] whitspace-wrap'>Have meaningful discussions with amazing new friends.</h1>
                 <GreenButton text='GET STARTED FOR FREE' className='relative top-44 md:static w-full md:w-auto'/>
               </div>
               <div className="hidden md:block order-3">
