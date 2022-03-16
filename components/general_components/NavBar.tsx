@@ -1,15 +1,23 @@
 import React from 'react'
 import Image from 'next/image'
 
-import logo from "../../assets/images/logo.png"
+import logo from '../../assets/images/logo.png'
 
 const NavBar = () => {
   return (
-    <nav className='px-8 md:px-32 bg-Blue w-full'>
-      <div className='relative h-20 flex items-center justify-between border-b border-gray-50/20 max-w-7xl mx-auto z-30 gap-4 md:gap-0'>
+    <nav className="w-full bg-Blue px-8 md:px-32">
+      <div className="relative z-30 mx-auto flex h-[7rem] max-w-7xl items-center justify-between gap-4 border-b border-gray-50/20 md:gap-0">
         {/* <h1 className='text-xl text-white font-bold'>Buddytree</h1> */}
-        <Image src={logo} height={26} width={152} alt='logo' className='object-cover'/>
-        <button className='bg-transparent text-xs px-5 py-2 border border-white rounded text-white z-30 whitespace-nowrap'>GET STARTED FOR FREE</button>
+        <Image
+          src={logo}
+          height={26}
+          width={152}
+          alt="logo"
+          className="object-cover"
+        />
+        <button className="z-30 whitespace-nowrap rounded border border-white bg-transparent px-5 py-2 font-nunito text-xs font-bold text-white transition-all hover:scale-105">
+          GET STARTED FOR FREE
+        </button>
       </div>
     </nav>
   )

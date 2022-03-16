@@ -17,6 +17,9 @@ module.exports = {
         22: '5.5rem',
         34: '8.5rem',
       },
+      fontFamily: {
+        nunito: ['Nunito'],
+      },
     },
   },
   plugins: [],
