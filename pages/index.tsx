@@ -72,8 +72,8 @@ const Home: NextPage = () => {
             />
           </div>
           <div className="relative mx-auto flex max-w-7xl flex-col items-center overflow-visible md:flex-row">
-            <div className="absolute -top-40 -right-32 z-0 hidden md:block">
-              <Image src={bluebubble} height={630} width={760} />
+            <div className="absolute -top-64 -right-32 z-0 hidden md:block">
+              <Image src={bluebubble} height={820} width={780} />
             </div>
             <div className="order-2 basis-1/2 md:order-1">
               <h1 className="mb-14 text-4xl font-bold text-white">
@@ -86,7 +86,7 @@ const Home: NextPage = () => {
               />
             </div>
             <div className="relative order-1 my-16 h-full w-full basis-1/2 pb-12 text-center md:order-2 md:my-auto md:pb-0">
-              <div className="absolute -top-16 md:right-24 md:-top-24 2xl:right-32">
+              <div className="absolute -top-16 md:right-16 md:-top-24 2xl:right-28">
                 <Image
                   src={video}
                   height={270}
@@ -209,7 +209,7 @@ const Home: NextPage = () => {
             </div>
             <div
               id="community"
-              className="relative overflow-visible pt-32 pb-20"
+              className="relative overflow-visible pt-20 pb-20"
             >
               <div className="absolute top-16 left-56">
                 <Image
@@ -220,7 +220,7 @@ const Home: NextPage = () => {
                 />
               </div>
               <div className="relative flex flex-col items-start justify-between gap-24 overflow-visible md:flex-row md:gap-32">
-                <div className="h-full flex-none md:w-80">
+                <div className="h-full flex-none md:w-80 pt-10">
                   <h1 className="leading-stretch text-3xl font-bold text-DarkBlue">
                     Join our community of Buddytree members from around the
                     world.

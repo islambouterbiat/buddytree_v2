@@ -6,7 +6,7 @@ import logo from '../../assets/images/logo.png'
 const NavBar = () => {
   return (
     <nav className="w-full bg-Blue px-8 md:px-32">
-      <div className="relative z-30 mx-auto flex h-[7rem] max-w-7xl items-center justify-between gap-4 border-b border-gray-50/20 md:gap-0">
+      <div className="relative z-30 mx-auto flex h-28 max-w-7xl items-center justify-between gap-4 border-b border-gray-50/20 md:gap-0">
         {/* <h1 className='text-xl text-white font-bold'>Buddytree</h1> */}
         <Image
           src={logo}

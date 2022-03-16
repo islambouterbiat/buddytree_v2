@@ -10,8 +10,8 @@ const HangoutCard = ({hangout}:any) => {
         <h1 className='text-DarkBlue text-lg font-bold my-2'>{hangout.title}</h1>
         <div className='flex mt-2'>
           {hangout.users.map((user:any,index:any)=>(
-            <div className="">
-              <Image key={index} height={25} width={25} src={user} />
+            <div key={index} className="">
+              <Image height={25} width={25} src={user} />
             </div>
           ))}
           <span className='text-sm text-LightGrey font-semibold ml-3'>54</span>
