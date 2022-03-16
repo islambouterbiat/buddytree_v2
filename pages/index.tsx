@@ -140,8 +140,8 @@ const Home: NextPage = () => {
               Backed By
             </h1>
             <div className="flex w-full flex-wrap items-center justify-center gap-y-4 md:justify-between">
-              {companies.map((company) => (
-                <div className="basis-1/3 text-center md:basis-20">
+              {companies.map((company, idx) => (
+                <div key={idx} className="basis-1/3 text-center md:basis-20">
                   <Image
                     key={company.id}
                     src={company.imageUrl}
