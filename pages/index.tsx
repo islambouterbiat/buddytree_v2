@@ -87,7 +87,7 @@ const Home: NextPage = () => {
             </div>
           </div>
         </section>
-        <section id='hangouts_section' className='relative bg-Grey/5 px-8 md:px-24'>
+        <section id='hangouts_section' className='relative bg-Grey/5 px-8 md:px-32'>
           <div className='max-w-7xl mx-auto relative'>
             <div className='hidden md:block absolute top-10 right-56 z-0'>
               <Image src={hangouts_bubble} height={800} width={860} />
@@ -95,15 +95,15 @@ const Home: NextPage = () => {
              <div className='block md:hidden absolute top-20 -right-8 z-0'>
               <Image src={hangouts_bubble_phone} height={450} width={310} className='object-cover' />
             </div>
-            <div className='pt-24 px-2 flex flex-col md:flex-row items-start justify-between'>
-              <Image src={pc} height={280} width={420} alt='computer' className='object-cover' />
+            <div className='pt-24 px-2 flex flex-col md:flex-row items-start gap-36'>
+              <Image src={pc} height={310} width={480} alt='computer' className='object-cover' />
               <div className='md:pr-40 pt-12'>
-                <h2 className='text-2xl font-bold text-DarkBlue'>The magic formula of <br/> Buddytree is</h2>
+                <h2 className='text-3xl font-bold text-DarkBlue'>The magic formula of <br/> Buddytree is</h2>
                 <div className='relative flex items-center mt-10 gap-8'>
-                  <div className='md:absolute -left-16 -bottom-2.5'>
-                    <Image src={heart} height={45} width={45} alt="blue heart"/>
+                  <div className=''>
+                    <Image src={heart} height={50} width={50} alt="blue heart"/>
                   </div>
-                  <p className='text-DarkBlue font-semibold text-sm w-64'>keeping group sizes small, so you don't feel shy to speak.</p>
+                  <p className='text-DarkBlue font-normal text-base w-64'>keeping group sizes small, so you don't feel shy to speak.</p>
                 </div>
               </div>
             </div>
@@ -120,7 +120,7 @@ const Home: NextPage = () => {
                 <Image src={hangout_logo} height={190} width={220} className='object-cover'/>
               </div>
               <div className="relative flex flex-col md:flex-row items-start justify-between gap-16 md:gap-32 overflow-visible">
-                <div className='md:w-72 flex-none h-full'>
+                <div className='md:w-80 flex-none h-full'>
                   <h1 className='text-DarkBlue text-3xl font-bold leading-stretch'>Join our community of Buddytree members from around the world.</h1>
                   <GreenButton text="GET STARTED FOR FREE" className="md:absolute bottom-0 w-full md:w-auto mt-10 md:mt-0"/>
                 </div>

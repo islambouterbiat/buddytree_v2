@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const HangoutCard = ({hangout}:any) => {
   return (
-    <div className='w-56 rounded flex-none flex flex-col relative'>
+    <div className='w-56 rounded flex-none flex flex-col relative cursor-pointer hover:scale-[1.01] transition ease-in-out duiration-600'>
       <Image src={hangout.imageUrl} height={180} width={300} className="rounded-t" />
       <div className='py-4 px-5 bg-white'>
         <span className='text-Blue text-xs font-semibold'>SAT, MAR 5 @ 7:00 PM GMT+1</span>
