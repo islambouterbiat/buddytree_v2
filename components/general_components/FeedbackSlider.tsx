@@ -29,8 +29,8 @@ const FeedbackSlider = ({ feedbacks }: any) => {
             key={feedback.id}
             className={
               index === current
-                ? 'opacity-1 ease scale-105 transition duration-1000'
-                : 'ease h-[15rem] opacity-0 transition duration-1000'
+                ? 'opacity-1 ease min-h-[15rem] scale-105 transition duration-1000'
+                : 'ease min-h-[15rem] opacity-0 transition duration-1000'
             }
           >
             {index === current && <FeedbackCard feedback={feedback} />}

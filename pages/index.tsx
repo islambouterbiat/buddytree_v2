@@ -54,7 +54,7 @@ const Home: NextPage = () => {
   return (
     <div className="min-h-screen">
       <Head>
-        <title>BodyTree</title>
+        <title>BuddyTree</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
