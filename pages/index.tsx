@@ -45,15 +45,15 @@ const Home: NextPage = () => {
           </div>
           <div className='flex flex-col md:flex-row items-center max-w-7xl mx-auto relative overflow-visible'>
             <div className='hidden md:block absolute -top-40 -right-24 z-0'>
-              <Image src={bluebubble} height={625} width={760} />
+              <Image src={bluebubble} height={630} width={760} />
             </div>
             <div className='order-2 md:order-1 basis-1/2'>
               <h1 className='text-3xl font-bold text-white mb-14'>A space to have meaningful <br/> discussions and make long-lasting <br/> friendships.</h1>
               <GreenButton text="GET STARTED FOR FREE" className="w-full md:w-auto"/>
             </div>
             <div className='text-center relative h-full w-full basis-1/2 order-1 md:order-2 my-16 md:my-auto pb-12 md:pb-0'>
-              <div className='absolute -top-16 md:right-24 2xl:right-32 md:-top-20'>
-                <Image src={video} height={250} width={370} alt='intro video thumbnail' className='object-cover'/>
+              <div className='absolute -top-16 md:right-24 2xl:right-32 md:-top-24'>
+                <Image src={video} height={270} width={394} alt='intro video thumbnail' className='object-cover'/>
               </div>
               <button className='rounded-full z-20 relative hover:scale-110 transition ease-in-out duration-300'>
                 <Image src={hero_button} height={70} width={70} alt='click to play intro video'/>
@@ -64,7 +64,7 @@ const Home: NextPage = () => {
         <section id='how_buddytree_works' className='relative px-8 md:px-24 py-20 max-w-7xl mx-auto'>
           <div className='flex flex-col md:flex-row justify-start md:justify-between md:items-center gap-3 md:gap-0'>
             <h1 className='text-3xl font-bold text-DarkBlue'>How Buddytree Works</h1>
-            <p className='font-semibold text-sm text-Grey'>You’re born into your family, but your Buddytree is yours to create.</p>
+            <p className='font-semibold text-base text-Grey'>You’re born into your family, but your Buddytree is yours to create.</p>
           </div>
           <div className='flex flex-col md:flex-row justify-between mt-16 gap-8 md:gap-0'>
             {steps.map((step)=>(

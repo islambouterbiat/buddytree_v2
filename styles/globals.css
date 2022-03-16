@@ -25,3 +25,17 @@
     width: 1rem;
 }
 
+.green_line::after {
+  content: "";
+  height: 1px;
+  width: 14rem;
+  background-color: #3CB371;
+  position: absolute;
+  top: 7rem;
+  right:-9rem;
+}
+.green_line:last-child::after{display: none;}
+
+@media (max-width: 640px) {
+    .green_line::after {display: none;}
+}
