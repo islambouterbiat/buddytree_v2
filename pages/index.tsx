@@ -7,6 +7,7 @@ import StepCard from '../components/general_components/StepCard'
 import HangoutCard from '../components/upcoming_hangouts/HangoutCard'
 import FeedbackSlider from '../components/general_components/FeedbackSlider'
 import { MouseParallaxContainer, MouseParallaxChild } from "react-parallax-mouse";
+import ReactTypingEffect from 'react-typing-effect';
 
 import { steps } from '../utils/steps'
 import { companies } from '../utils/companies'
@@ -32,7 +33,6 @@ import phone1 from '../assets/images/Phone Mockup_left.jpg'
 import phone2 from '../assets/images/Phone Mockup_right.jpg'
 
 const Home: NextPage = ({data}:any) => {
-  console.log(data)
   const topics = [
     'Goals',
     'Motivation',
@@ -230,28 +230,25 @@ const Home: NextPage = ({data}:any) => {
                     />
                   </div>
                   <ul>
-                    <li>
-                      <p className="w-64 text-base font-normal text-DarkBlue">
-                        keeping group sizes small, so you can hear one another.
-                      </p>
+                    <li className="w-64 text-base font-normal text-DarkBlue">
+                      <ReactTypingEffect
+                        text={["keeping group sizes small, so you can hear one another."]}
+                      />
                     </li>
-                    <li>
-                      <p className="w-64 text-base font-normal text-DarkBlue">
-                        providing a wide range of videos and discussion
-                        questions to help you keep things on topic.
-                      </p>
+                    <li className="w-64 text-base font-normal text-DarkBlue">
+                      <ReactTypingEffect
+                        text={[" providing a wide range of videos and discussion questions to help you keep things on topic."]}
+                      />
                     </li>
-                    <li>
-                      <p className="w-64 text-base font-normal text-DarkBlue">
-                        having a wide range of discussion topics, so you can
-                        talk about what you’re passionate about.
-                      </p>
+                    <li className="w-64 text-base font-normal text-DarkBlue">
+                      <ReactTypingEffect
+                        text={[" having a wide range of discussion topics, so you can talk about what you’re passionate about."]}
+                      />
                     </li>
-                    <li>
-                      <p className="w-64 text-base font-normal text-DarkBlue">
-                        valuing trust and accountability in our community, so
-                        you get to enjoy high-quality experiences.
-                      </p>
+                    <li className="w-64 text-base font-normal text-DarkBlue">
+                      <ReactTypingEffect
+                        text={["valuing trust and accountability in our community, so you get to enjoy high-quality experiences."]}
+                      />
                     </li>
                   </ul>
                 </div>
