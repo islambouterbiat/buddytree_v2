@@ -6,6 +6,7 @@ import fifth from "../assets/images/upcoming_hangouts/5.png"
 import user1 from "../assets/images/upcoming_hangouts/user1.png"
 import user2 from "../assets/images/upcoming_hangouts/user2.png"
 import user3 from "../assets/images/upcoming_hangouts/user3.png"
+import axios from 'axios';
 
 interface Card{
     id:number,
@@ -24,3 +25,10 @@ export const hangouts:Array<Card>=[
     {id:7,title:"Trust & Vulnerability",imageUrl:fifth,users:[user1,user2,user3]},
     {id:8,title:"Trust & Vulnerability",imageUrl:fifth,users:[user1,user2,user3]},
 ]
+
+export const baseUrl = "https://buddytree-api-dev.herokuapp.com/api/topics_all";
+
+export const fetchApi = async () => {
+  const { data } = await axios.get(baseUrl);
+  return data;
+};

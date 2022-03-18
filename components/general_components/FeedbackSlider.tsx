@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import FeedbackCard from './FeedbackCard'
-import Carousel from 'react-multi-carousel'
-import 'react-multi-carousel/lib/styles.css'
 
 const FeedbackSlider = ({ feedbacks }: any) => {
   const [current, setCurrent] = useState(0)

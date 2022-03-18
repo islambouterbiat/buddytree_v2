@@ -6,10 +6,12 @@ import GreenButton from '../components/general_components/GreenButton'
 import StepCard from '../components/general_components/StepCard'
 import HangoutCard from '../components/upcoming_hangouts/HangoutCard'
 import FeedbackSlider from '../components/general_components/FeedbackSlider'
+import { MouseParallaxContainer, MouseParallaxChild } from "react-parallax-mouse";
 
 import { steps } from '../utils/steps'
 import { companies } from '../utils/companies'
 import { hangouts } from '../utils/hangouts'
+import { fetchApi } from '../utils/hangouts'
 import { feedbacks } from '../utils/feedbacks'
 import hero_1 from '../assets/images/hero/1.png'
 import hero_2 from '../assets/images/hero/2.png'
@@ -29,7 +31,8 @@ import topics_bg_phone from '../assets/images/Mask group phone.png'
 import phone1 from '../assets/images/Phone Mockup_left.jpg'
 import phone2 from '../assets/images/Phone Mockup_right.jpg'
 
-const Home: NextPage = () => {
+const Home: NextPage = ({data}:any) => {
+  console.log(data)
   const topics = [
     'Goals',
     'Motivation',
@@ -74,18 +77,26 @@ const Home: NextPage = () => {
           </div>
           <div className="-z-1 relative mx-auto flex max-w-7xl flex-col items-center overflow-visible md:flex-row">
             {/* THE BUBBLE IS AN SVG NOW */}
-            <div className="scale-130 z-1 absolute -top-72 -right-60 hidden w-[60vw] transition-all md:block">
-              <svg
-                viewBox="0 0 1659 1384"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M1002.58 1322.61C213.437 1594.22 -377.95 895.779 289.545 569.612C647.621 396.969 534.708 472.325 787.358 177.088C1043.75 -115.899 1399.96 -18.6114 1562.15 273.813C1746.18 608.415 1722.47 1062.8 1002.58 1322.61Z"
-                  fill="#10537D"
-                />
-              </svg>
-            </div>
+            <MouseParallaxContainer className="parallax" 
+              containerStyles={{
+                position: "static",
+              }}
+            >
+              <MouseParallaxChild factorX={0.03} factorY={0.1} className='scale-130 z-1 absolute -top-72 -right-60 hidden w-[60vw] md:min-w-[600px] transition-all md:block'>
+                <div className="">
+                  <svg
+                    viewBox="0 0 1659 1384"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1002.58 1322.61C213.437 1594.22 -377.95 895.779 289.545 569.612C647.621 396.969 534.708 472.325 787.358 177.088C1043.75 -115.899 1399.96 -18.6114 1562.15 273.813C1746.18 608.415 1722.47 1062.8 1002.58 1322.61Z"
+                      fill="#10537D"
+                    />
+                  </svg>
+                </div>
+              </MouseParallaxChild>
+            </MouseParallaxContainer >
             <div className="order-2 basis-1/2 md:order-1">
               <h1 className="mb-14 text-4xl font-bold text-white">
                 A space to have meaningful <br /> discussions and make
@@ -97,23 +108,39 @@ const Home: NextPage = () => {
               />
             </div>
             <div className="relative order-1 my-16 h-full w-full basis-1/2 pb-12 text-center md:order-2 md:my-auto md:pb-0">
-              <div className="absolute -top-16 md:right-16 md:-top-24 2xl:right-28">
-                <Image
-                  src={video}
-                  height={270}
-                  width={394}
-                  alt="intro video thumbnail"
-                  className="object-cover"
-                />
-              </div>
-              <button className="relative z-20 rounded-full transition duration-300 ease-in-out">
-                <Image
-                  src={hero_button}
-                  height={70}
-                  width={70}
-                  alt="click to play intro video"
-                />
-              </button>
+              <MouseParallaxContainer 
+                className="parallax"
+                containerStyles={{
+                  width: "100%",
+                  overflow:"visible",
+                }}
+                resetOnLeave
+                >
+                  <MouseParallaxChild factorX={0.03} factorY={0.1} 
+                  className="absolute -top-16 md:right-16 md:-top-24 2xl:right-28 overflow-visible"
+                  updateStyles={{overflow:"visible"}}
+                  >
+                    <div >
+                      <Image
+                        src={video}
+                        height={270}
+                        width={394}
+                        alt="intro video thumbnail"
+                        className="object-cover"
+                      />
+                    </div>
+                  </MouseParallaxChild>
+                  <MouseParallaxChild factorX={0.07} factorY={0.08} className="relative z-20 rounded-full transition duration-300 ease-in-out">
+                    <button >
+                      <Image
+                        src={hero_button}
+                        height={70}
+                        width={70}
+                        alt="click to play intro video"
+                      />
+                    </button>
+                  </MouseParallaxChild>
+              </MouseParallaxContainer>
             </div>
           </div>
         </section>
@@ -235,7 +262,7 @@ const Home: NextPage = () => {
                 Upcoming Hangouts
               </h1>
               <div className="scrolltype flex w-full flex-nowrap gap-8 overflow-x-auto pt-6 pb-12 md:pt-20">
-                {hangouts.map((hangout) => (
+                {data.map((hangout:any) => (
                   <HangoutCard key={hangout.id} hangout={hangout} />
                 ))}
               </div>
@@ -353,3 +380,10 @@ const Home: NextPage = () => {
 }
 
 export default Home
+
+export async function getStaticProps() {
+  const data = await fetchApi();
+  return {
+    props: {data},
+  };
+}
