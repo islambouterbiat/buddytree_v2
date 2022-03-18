@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -15,7 +16,7 @@ import hero_2 from '../assets/images/hero/2.png'
 import hero_3 from '../assets/images/hero/3.png'
 import hero_4 from '../assets/images/hero/4.png'
 import video from '../assets/images/hero/video.png'
-import bluebubble from '../assets/images/hero/blue_bubble.png'
+// import bluebubble from '../assets/images/hero/blue_bubble.png'
 import bluebubble_phone from '../assets/images/hero/blue_bubble_phone.png'
 import hero_button from '../assets/images/hero/button.png'
 import pc from '../assets/images/upcoming_hangouts/hero.png'
@@ -25,8 +26,8 @@ import hangouts_bubble_phone from '../assets/images/upcoming_hangouts/bubble_pho
 import hangout_logo from '../assets/images/upcoming_hangouts/Quote Mark.png'
 import topics_bg from '../assets/images/Mask group.png'
 import topics_bg_phone from '../assets/images/Mask group phone.png'
-import phone1 from '../assets/images/Phone Mockup 1.png'
-import phone2 from '../assets/images/Phone Mockup 2.png'
+import phone1 from '../assets/images/Phone Mockup_left.jpg'
+import phone2 from '../assets/images/Phone Mockup_right.jpg'
 
 const Home: NextPage = () => {
   const topics = [
@@ -36,14 +37,13 @@ const Home: NextPage = () => {
     'Vulnerability',
     'Wealth',
     'Sex',
-    'Drugs',
+    'Meaning',
     'Movies',
     'Climate',
     'Childfree',
-    'Vaccine',
+    'Purpose',
     'Guns',
-    'Cancel',
-    'culture',
+    'Cancel-culture',
     'Music',
     'Borders & nations',
     'Fear',
@@ -51,6 +51,7 @@ const Home: NextPage = () => {
     'Meaning',
     'Purpose',
   ]
+
   return (
     <div className="min-h-screen">
       <Head>
@@ -61,9 +62,9 @@ const Home: NextPage = () => {
       <main className="mx-auto w-full ">
         <section
           id="hero_section"
-          className="relative mx-auto bg-Blue px-8 pt-10 pb-20 md:px-32 md:pt-[8rem] md:pb-32"
+          className="relative top-[-7rem] mx-auto overflow-hidden bg-Blue px-8 pb-20 pt-10 md:px-32 md:pt-[16rem] md:pb-32"
         >
-          <div className="absolute bottom-6 left-0 z-0 block md:hidden">
+          <div className="z-1 absolute bottom-6 left-0 block md:hidden">
             <Image
               src={bluebubble_phone}
               height={430}
@@ -71,9 +72,19 @@ const Home: NextPage = () => {
               className="object-cover"
             />
           </div>
-          <div className="relative mx-auto flex max-w-7xl flex-col items-center overflow-visible md:flex-row">
-            <div className="absolute -top-64 -right-32 z-0 hidden md:block">
-              <Image src={bluebubble} height={820} width={780} />
+          <div className="-z-1 relative mx-auto flex max-w-7xl flex-col items-center overflow-visible md:flex-row">
+            {/* THE BUBBLE IS AN SVG NOW */}
+            <div className="scale-130 z-1 absolute -top-72 -right-60 hidden w-[60vw] transition-all md:block">
+              <svg
+                viewBox="0 0 1659 1384"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1002.58 1322.61C213.437 1594.22 -377.95 895.779 289.545 569.612C647.621 396.969 534.708 472.325 787.358 177.088C1043.75 -115.899 1399.96 -18.6114 1562.15 273.813C1746.18 608.415 1722.47 1062.8 1002.58 1322.61Z"
+                  fill="#10537D"
+                />
+              </svg>
             </div>
             <div className="order-2 basis-1/2 md:order-1">
               <h1 className="mb-14 text-4xl font-bold text-white">
@@ -95,7 +106,7 @@ const Home: NextPage = () => {
                   className="object-cover"
                 />
               </div>
-              <button className="relative z-20 rounded-full transition duration-300 ease-in-out hover:scale-110">
+              <button className="relative z-20 rounded-full transition duration-300 ease-in-out">
                 <Image
                   src={hero_button}
                   height={70}
@@ -108,11 +119,11 @@ const Home: NextPage = () => {
         </section>
         <section
           id="how_buddytree_works"
-          className="relative mx-auto max-w-7xl px-8 py-20 md:px-24"
+          className="relative mx-auto max-w-7xl px-8 py-20  md:px-24"
         >
           <div className="flex flex-col justify-start gap-3 md:flex-row md:items-center md:justify-between md:gap-0">
             <h1 className="text-3xl font-bold text-DarkBlue">
-              How Buddytree Works
+              How Buddytree works
             </h1>
             <p className="text-base font-semibold text-Grey">
               You’re born into your family, but your Buddytree is yours to
@@ -135,7 +146,7 @@ const Home: NextPage = () => {
           id="trusted_companies"
           className="relative mx-auto mt-10 max-w-7xl px-8 md:px-24"
         >
-          <div className="flex w-full flex-col items-center justify-between gap-5 border-t border-Grey/10 py-6 md:flex-row md:gap-12 md:px-20">
+          <div className="flex hidden w-full flex-col items-center justify-between gap-5 border-t border-Grey/10 py-6 md:flex-row md:gap-12 md:px-20">
             <h1 className="whitespace-nowrap text-xl font-semibold text-DarkBlue">
               Backed By
             </h1>
@@ -191,9 +202,31 @@ const Home: NextPage = () => {
                       alt="blue heart"
                     />
                   </div>
-                  <p className="w-64 text-base font-normal text-DarkBlue">
-                    keeping group sizes small, so you don't feel shy to speak.
-                  </p>
+                  <ul>
+                    <li>
+                      <p className="w-64 text-base font-normal text-DarkBlue">
+                        keeping group sizes small, so you can hear one another.
+                      </p>
+                    </li>
+                    <li>
+                      <p className="w-64 text-base font-normal text-DarkBlue">
+                        providing a wide range of videos and discussion
+                        questions to help you keep things on topic.
+                      </p>
+                    </li>
+                    <li>
+                      <p className="w-64 text-base font-normal text-DarkBlue">
+                        having a wide range of discussion topics, so you can
+                        talk about what you’re passionate about.
+                      </p>
+                    </li>
+                    <li>
+                      <p className="w-64 text-base font-normal text-DarkBlue">
+                        valuing trust and accountability in our community, so
+                        you get to enjoy high-quality experiences.
+                      </p>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -220,7 +253,7 @@ const Home: NextPage = () => {
                 />
               </div>
               <div className="relative flex flex-col items-start justify-between gap-24 overflow-visible md:flex-row md:gap-32">
-                <div className="h-full flex-none md:w-80 pt-10">
+                <div className="h-full flex-none pt-10 md:w-80">
                   <h1 className="leading-stretch text-3xl font-bold text-DarkBlue">
                     Join our community of Buddytree members from around the
                     world.
@@ -237,7 +270,7 @@ const Home: NextPage = () => {
         </section>
         <section
           id="explore_more_section"
-          className="relative bg-Blue px-8 pt-12 pb-20 md:px-32 md:py-28"
+          className="relative overflow-hidden bg-Blue px-8 pt-12 pb-20 md:px-32 md:py-28"
         >
           <div className="relative mx-auto max-w-7xl">
             <div className="absolute -top-12 -right-8 z-0 hidden md:-top-28 md:-right-32 md:block">
@@ -256,7 +289,7 @@ const Home: NextPage = () => {
                 className="object-cover"
               />
             </div>
-            <div className="flex flex-col items-start justify-between gap-20 md:flex-row md:gap-40">
+            <div className="flex flex-col items-start justify-between gap-20 md:flex-row md:gap-[16rem]">
               <div className="relative basis-1/2">
                 <h1 className="mb-10 text-3xl font-bold text-white md:mb-20">
                   Humans are social creatures. What discussions would you like
@@ -291,7 +324,7 @@ const Home: NextPage = () => {
                   src={phone1}
                   height={500}
                   width={350}
-                  className="object-cover"
+                  className="object-cover  object-top"
                 />
               </div>
               <div className="order-1 text-center md:order-2">
@@ -308,7 +341,7 @@ const Home: NextPage = () => {
                   src={phone2}
                   height={500}
                   width={350}
-                  className="object-cover"
+                  className="object-cover  object-top"
                 />
               </div>
             </div>

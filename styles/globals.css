@@ -45,3 +45,9 @@ button {
 button:hover {
   transform: scale(1.05);
 }
+
+.animatedWithMouse {
+  position: relative;
+  transform: perspective(0);
+  transform-style: preserve-3d;
+}
