@@ -13,7 +13,7 @@ const FeedbackCard = ({ feedback }: any) => {
       <span className="text-sm text-white">
         -{feedback.user}, {feedback.place}
       </span>
-      <div className="mt-4 flex flex-wrap gap-2 md:flex-nowrap">
+      {/* <div className="mt-4 flex flex-wrap gap-2 md:flex-nowrap">
         {feedback.tags.map((tag: any, i: any) => (
           <span
             key={i}
@@ -22,7 +22,7 @@ const FeedbackCard = ({ feedback }: any) => {
             {tag}
           </span>
         ))}
-      </div>
+      </div> */}
     </div>
   )
 }

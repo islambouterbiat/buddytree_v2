@@ -15,9 +15,12 @@ const NavBar = () => {
           alt="logo"
           className="object-cover"
         />
-        <button className="z-30 whitespace-nowrap rounded border border-white bg-transparent px-5 py-2 font-nunito text-xs font-bold text-white transition-all hover:scale-105">
+        <a
+          href="https://www.buddytree.org/home"
+          className="z-30 inline-block whitespace-nowrap rounded border border-white bg-transparent px-5 py-2 font-nunito text-xs font-bold text-white transition-all hover:scale-105"
+        >
           GET STARTED FOR FREE
-        </button>
+        </a>
       </div>
     </nav>
   )

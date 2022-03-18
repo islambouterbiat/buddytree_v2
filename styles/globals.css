@@ -39,10 +39,13 @@
   }
 }
 
-button {
+button,
+a {
+  display: inline-block;
   transition: all 150ms ease-in;
 }
-button:hover {
+button:hover,
+a:hover {
   transform: scale(1.05);
 }
 
