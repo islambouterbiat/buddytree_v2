@@ -268,8 +268,8 @@ const Home: NextPage = ({ data }: any) => {
                           'valuing trust and accountability in our community, so you get to enjoy high-quality experiences.',
                         ]}
                         speed={10}
-                        eraseSpeed={10}
-                        eraseDelay={2000}
+                        eraseSpeed={0}
+                        eraseDelay={3000}
                         typingDelay={700}
                       />
                     </li>
