@@ -72,11 +72,13 @@ const Home: NextPage = ({ data }: any) => {
         {go && (
           <ModalVideo
             channel="youtube"
-            // autoplay
+            autoplay
             isOpen={isOpen}
-            videoId="UxPkK8gW0hs"
+            videoId="GNqZYOsZlUI"
             onClose={() => setOpen(false)}
-            // theme="dark"
+            theme="dark"
+            height="80vh"
+            width="80vw"
           />
         )}
         <section
