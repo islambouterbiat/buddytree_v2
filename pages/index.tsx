@@ -6,19 +6,19 @@ import GreenButton from '../components/general_components/GreenButton'
 import StepCard from '../components/general_components/StepCard'
 import HangoutCard from '../components/upcoming_hangouts/HangoutCard'
 import FeedbackSlider from '../components/general_components/FeedbackSlider'
-import { MouseParallaxContainer, MouseParallaxChild } from "react-parallax-mouse";
-import ReactTypingEffect from 'react-typing-effect';
+import {
+  MouseParallaxContainer,
+  MouseParallaxChild,
+} from 'react-parallax-mouse'
+import ReactTypingEffect from 'react-typing-effect/.'
+
+import ModalVideo from 'react-modal-video'
 
 import { steps } from '../utils/steps'
 import { companies } from '../utils/companies'
 import { fetchApi } from '../utils/hangouts'
 import { feedbacks } from '../utils/feedbacks'
-import hero_1 from '../assets/images/hero/1.png'
-import hero_2 from '../assets/images/hero/2.png'
-import hero_3 from '../assets/images/hero/3.png'
-import hero_4 from '../assets/images/hero/4.png'
 import video from '../assets/images/hero/video.png'
-// import bluebubble from '../assets/images/hero/blue_bubble.png'
 import bluebubble_phone from '../assets/images/hero/blue_bubble_phone.png'
 import hero_button from '../assets/images/hero/button.png'
 import pc from '../assets/images/upcoming_hangouts/hero.png'
@@ -31,37 +31,54 @@ import topics_bg_phone from '../assets/images/Mask group phone.png'
 import phone1 from '../assets/images/Phone Mockup_left.jpg'
 import phone2 from '../assets/images/Phone Mockup_right.jpg'
 
-const Home: NextPage = ({data}:any) => {
-  const topics = [
-    'Goals',
-    'Motivation',
-    'Trust',
-    'Vulnerability',
-    'Wealth',
-    'Sex',
-    'Meaning',
-    'Movies',
-    'Climate',
-    'Childfree',
-    'Purpose',
-    'Guns',
-    'Cancel-culture',
-    'Music',
-    'Borders & nations',
-    'Fear',
-    'Confidence',
-    'Meaning',
-    'Purpose',
-  ]
+const topics = [
+  'Goals',
+  'Motivation',
+  'Trust',
+  'Vulnerability',
+  'Wealth',
+  'Sex',
+  'Meaning',
+  'Movies',
+  'Climate',
+  'Childfree',
+  'Purpose',
+  'Guns',
+  'Cancel-culture',
+  'Music',
+  'Borders & nations',
+  'Fear',
+  'Confidence',
+  'Meaning',
+  'Purpose',
+]
+
+const Home: NextPage = ({ data }: any) => {
+  const [isOpen, setOpen] = useState(false)
+
+  const [go, setGo] = useState(false) // waiting for the
+  useEffect(() => {
+    setGo(true)
+  }, [])
 
   return (
     <div className="min-h-screen">
       <Head>
         <title>BuddyTree</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
 
       <main className="mx-auto w-full ">
+        {go && (
+          <ModalVideo
+            channel="youtube"
+            // autoplay
+            isOpen={isOpen}
+            videoId="UxPkK8gW0hs"
+            onClose={() => setOpen(false)}
+            // theme="dark"
+          />
+        )}
         <section
           id="hero_section"
           className="relative top-[-7rem] mx-auto overflow-hidden bg-Blue px-8 pb-20 pt-10 md:px-32 md:pt-[16rem] md:pb-32"
@@ -76,12 +93,17 @@ const Home: NextPage = ({data}:any) => {
           </div>
           <div className="-z-1 relative mx-auto flex max-w-7xl flex-col items-center overflow-visible md:flex-row">
             {/* THE BUBBLE IS AN SVG NOW */}
-            <MouseParallaxContainer className="parallax" 
+            <MouseParallaxContainer
+              className="parallax"
               containerStyles={{
-                position: "static",
+                position: 'static',
               }}
             >
-              <MouseParallaxChild factorX={0.03} factorY={0.1} className='scale-130 z-1 absolute -top-72 -right-60 hidden w-[60vw] md:min-w-[600px] transition-all md:block'>
+              <MouseParallaxChild
+                factorX={0.03}
+                factorY={0.1}
+                className="scale-130 z-1 absolute -top-72 -right-60 hidden w-[60vw] transition-all md:block md:min-w-[600px]"
+              >
                 <div className="">
                   <svg
                     viewBox="0 0 1659 1384"
@@ -95,7 +117,7 @@ const Home: NextPage = ({data}:any) => {
                   </svg>
                 </div>
               </MouseParallaxChild>
-            </MouseParallaxContainer >
+            </MouseParallaxContainer>
             <div className="order-2 basis-1/2 md:order-1">
               <h1 className="mb-14 text-4xl font-bold text-white">
                 A space to have meaningful <br /> discussions and make
@@ -107,38 +129,44 @@ const Home: NextPage = ({data}:any) => {
               />
             </div>
             <div className="relative order-1 my-16 h-full w-full basis-1/2 pb-12 text-center md:order-2 md:my-auto md:pb-0">
-              <MouseParallaxContainer 
+              <MouseParallaxContainer
                 className="parallax"
                 containerStyles={{
-                  width: "100%",
-                  overflow:"visible",
+                  width: '100%',
+                  overflow: 'visible',
                 }}
                 resetOnLeave
+              >
+                <MouseParallaxChild
+                  factorX={0.03}
+                  factorY={0.1}
+                  className="absolute -top-16 overflow-visible md:right-16 md:-top-24 2xl:right-28"
+                  updateStyles={{ overflow: 'visible' }}
                 >
-                  <MouseParallaxChild factorX={0.03} factorY={0.1} 
-                  className="absolute -top-16 md:right-16 md:-top-24 2xl:right-28 overflow-visible"
-                  updateStyles={{overflow:"visible"}}
-                  >
-                    <div >
-                      <Image
-                        src={video}
-                        height={270}
-                        width={394}
-                        alt="intro video thumbnail"
-                        className="object-cover"
-                      />
-                    </div>
-                  </MouseParallaxChild>
-                  <MouseParallaxChild factorX={0.07} factorY={0.08} className="relative z-20 rounded-full transition duration-300 ease-in-out">
-                    <button >
-                      <Image
-                        src={hero_button}
-                        height={70}
-                        width={70}
-                        alt="click to play intro video"
-                      />
-                    </button>
-                  </MouseParallaxChild>
+                  <div>
+                    <Image
+                      src={video}
+                      height={270}
+                      width={394}
+                      alt="intro video thumbnail"
+                      className="object-cover"
+                    />
+                  </div>
+                </MouseParallaxChild>
+                <MouseParallaxChild
+                  factorX={0.07}
+                  factorY={0.08}
+                  className="relative z-20 rounded-full transition duration-300 ease-in-out"
+                >
+                  <button onClick={() => setOpen(true)}>
+                    <Image
+                      src={hero_button}
+                      height={70}
+                      width={70}
+                      alt="click to play intro video"
+                    />
+                  </button>
+                </MouseParallaxChild>
               </MouseParallaxContainer>
             </div>
           </div>
@@ -219,7 +247,7 @@ const Home: NextPage = ({data}:any) => {
                 <h2 className="text-3xl font-bold text-DarkBlue">
                   The magic formula of <br /> Buddytree is
                 </h2>
-                <div className="relative mt-10 flex items-center gap-8">
+                <div className="relative mt-10 flex min-h-[120px] items-center gap-8">
                   <div className="">
                     <Image
                       src={heart}
@@ -231,22 +259,16 @@ const Home: NextPage = ({data}:any) => {
                   <ul>
                     <li className="w-64 text-base font-normal text-DarkBlue">
                       <ReactTypingEffect
-                        text={["keeping group sizes small, so you can hear one another."]}
-                      />
-                    </li>
-                    <li className="w-64 text-base font-normal text-DarkBlue">
-                      <ReactTypingEffect
-                        text={[" providing a wide range of videos and discussion questions to help you keep things on topic."]}
-                      />
-                    </li>
-                    <li className="w-64 text-base font-normal text-DarkBlue">
-                      <ReactTypingEffect
-                        text={[" having a wide range of discussion topics, so you can talk about what you’re passionate about."]}
-                      />
-                    </li>
-                    <li className="w-64 text-base font-normal text-DarkBlue">
-                      <ReactTypingEffect
-                        text={["valuing trust and accountability in our community, so you get to enjoy high-quality experiences."]}
+                        className="reactTypingEffect"
+                        text={[
+                          'keeping group sizes small, so you can hear one another.',
+                          'providing a wide range of videos and discussion questions to help you keep things on topic.',
+                          'having a wide range of discussion topics, so you can talk about what you’re passionate about.',
+                          'valuing trust and accountability in our community, so you get to enjoy high-quality experiences.',
+                        ]}
+                        speed={60}
+                        eraseSpeed={10}
+                        eraseDelay={1000}
                       />
                     </li>
                   </ul>
@@ -258,7 +280,7 @@ const Home: NextPage = ({data}:any) => {
                 Upcoming Hangouts
               </h1>
               <div className="scrolltype flex w-full flex-nowrap gap-8 overflow-x-auto pt-6 pb-12 md:pt-20">
-                {data.map((hangout:any) => (
+                {data.map((hangout: any) => (
                   <HangoutCard key={hangout.id} hangout={hangout} />
                 ))}
               </div>
@@ -327,7 +349,7 @@ const Home: NextPage = ({data}:any) => {
                 {topics.map((topic, i) => (
                   <button
                     key={i}
-                    className="rounded border border-white/50 bg-transparent px-3 py-1.5 text-sm text-LightGreen"
+                    className="cursor-default rounded border border-white/50 bg-transparent px-3 py-1.5 text-sm text-LightGreen"
                   >
                     {topic}
                   </button>
@@ -378,8 +400,8 @@ const Home: NextPage = ({data}:any) => {
 export default Home
 
 export async function getStaticProps() {
-  const data = await fetchApi();
+  const data = await fetchApi()
   return {
-    props: {data},
-  };
+    props: { data },
+  }
 }

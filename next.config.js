@@ -2,6 +2,6 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ['bt-topic.s3.us-east-2.amazonaws.com'],
+    domains: [process.env.FILE_SERVER, process.env.FILE_SERVER_2],
   },
 }

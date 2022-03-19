@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* @import './../node_modules/react-modal-video/css/modal-video.css'; */
+@import './../node_modules/react-modal-video/css/modal-video.min.css';
+
 * {
   font-family: 'Dosis', sans-serif;
   letter-spacing: 1px;
@@ -53,4 +56,8 @@ a:hover {
   position: relative;
   transform: perspective(0);
   transform-style: preserve-3d;
+}
+
+.reactTypingEffect div {
+  font-weight: bold;
 }
