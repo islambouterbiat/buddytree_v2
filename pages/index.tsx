@@ -268,7 +268,8 @@ const Home: NextPage = ({ data }: any) => {
                         ]}
                         speed={60}
                         eraseSpeed={10}
-                        eraseDelay={1000}
+                        eraseDelay={1500}
+                        typingDelay={1000}
                       />
                     </li>
                   </ul>
