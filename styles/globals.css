@@ -58,6 +58,7 @@ a:hover {
   transform-style: preserve-3d;
 }
 
-.reactTypingEffect div {
+.animatedText * {
   font-weight: bold;
+  font-size: 1.2rem;
 }

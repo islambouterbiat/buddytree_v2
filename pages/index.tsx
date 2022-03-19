@@ -259,19 +259,18 @@ const Home: NextPage = ({ data }: any) => {
                     />
                   </div>
                   <ul>
-                    <li className="w-64 text-base font-normal text-DarkBlue">
+                    <li className="animatedText w-64 text-base font-normal text-DarkBlue">
                       <ReactTypingEffect
-                        className="reactTypingEffect"
                         text={[
                           'keeping group sizes small, so you can hear one another.',
                           'providing a wide range of videos and discussion questions to help you keep things on topic.',
                           'having a wide range of discussion topics, so you can talk about what you’re passionate about.',
                           'valuing trust and accountability in our community, so you get to enjoy high-quality experiences.',
                         ]}
-                        speed={60}
+                        speed={10}
                         eraseSpeed={10}
-                        eraseDelay={1500}
-                        typingDelay={1000}
+                        eraseDelay={2000}
+                        typingDelay={700}
                       />
                     </li>
                   </ul>
