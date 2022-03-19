@@ -11,7 +11,6 @@ import ReactTypingEffect from 'react-typing-effect';
 
 import { steps } from '../utils/steps'
 import { companies } from '../utils/companies'
-import { hangouts } from '../utils/hangouts'
 import { fetchApi } from '../utils/hangouts'
 import { feedbacks } from '../utils/feedbacks'
 import hero_1 from '../assets/images/hero/1.png'
