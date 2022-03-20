@@ -1,10 +1,9 @@
 /** @type {import('next').NextConfig} */
+
+const { FILE_SERVER, FILE_SERVER_2 } = require('./secret')
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: [
-      's3.us-east-2.amazonaws.com',
-      'bt-topic.s3.us-east-2.amazonaws.com',
-    ],
+    domains: [FILE_SERVER, FILE_SERVER_2],
   },
 }

@@ -362,7 +362,7 @@ const Home: NextPage = ({ data }: any) => {
         </section>
         <section
           id="last_section"
-          className="relative bg-Grey/5 px-8 pt-16 md:px-24 md:pt-32"
+          className="relative bg-[#f3f3f3] px-8 pt-16 md:px-24 md:pt-32"
         >
           <div className="mx-auto max-w-7xl">
             <div className="flex flex-col md:flex-row md:gap-20">

@@ -1,10 +1,7 @@
 import axios from 'axios'
-
-// export const baseUrl = "https://buddytree-api-dev.herokuapp.com/api/topics_all";
-export const baseUrl =
-  'https://buddytree-api-dev.herokuapp.com/api/containers_all/1'
+import { UPCOMING_HANGOUTS_API } from '../secret'
 
 export const fetchApi = async () => {
-  const { data } = await axios.get(baseUrl)
+  const { data } = await axios(UPCOMING_HANGOUTS_API)
   return data
 }
