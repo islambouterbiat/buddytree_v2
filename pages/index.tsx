@@ -83,7 +83,7 @@ const Home: NextPage = ({ data }: any) => {
         )}
         <section
           id="hero_section"
-          className="relative top-[-7rem] mx-auto overflow-hidden bg-Blue px-8 pb-20 pt-10 md:px-32 md:pt-[16rem] md:pb-32"
+          className="relative md:top-[-7rem] mx-auto overflow-hidden bg-Blue px-8 pb-20 pt-10 md:px-32 md:pt-[16rem] md:pb-32"
         >
           <div className="z-1 absolute bottom-6 left-0 block md:hidden">
             <Image
@@ -142,7 +142,7 @@ const Home: NextPage = ({ data }: any) => {
                 <MouseParallaxChild
                   factorX={0.03}
                   factorY={0.1}
-                  className="absolute -top-16 overflow-visible md:right-16 md:-top-24 2xl:right-28"
+                  className="absolute -top-16 overflow-visible md:right-16 xl:right-20 md:-top-24 2xl:right-28"
                   updateStyles={{ overflow: 'visible' }}
                 >
                   <div>
@@ -175,7 +175,7 @@ const Home: NextPage = ({ data }: any) => {
         </section>
         <section
           id="how_buddytree_works"
-          className="relative mx-auto max-w-7xl px-8 py-20  md:px-24"
+          className="relative mx-auto max-w-7xl px-8 py-20 md:py-0 md:pb-20  md:px-24"
         >
           <div className="flex flex-col justify-start gap-3 md:flex-row md:items-center md:justify-between md:gap-0">
             <h1 className="text-3xl font-bold text-DarkBlue">
