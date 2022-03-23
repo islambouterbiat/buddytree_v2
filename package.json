@@ -16,7 +16,8 @@
     "react-multi-carousel": "^2.8.0",
     "react-parallax-mouse": "^1.5.1",
     "react-scroll-motion": "^0.2.6",
-    "react-typing-effect": "^2.0.5"
+    "react-typing-effect": "^2.0.5",
+    "sass": "^1.49.9"
   },
   "devDependencies": {
     "@types/node": "17.0.4",
