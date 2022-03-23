@@ -29,7 +29,7 @@ import topics_bg_phone from '../../assets/images/Mask group phone.png'
 import phone1 from '../../assets/images/Phone Mockup_left.jpg'
 import phone2 from '../../assets/images/Phone Mockup_right.jpg'
 
-import styles from "../../styles/home.module.scss"
+import styles from "../../styles/index.module.scss"
 
 const topics = [
   'Goals',
