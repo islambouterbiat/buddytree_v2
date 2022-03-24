@@ -13,7 +13,7 @@ const NavBar = () => {
           height={26}
           width={152}
           alt="logo"
-          className="object-cover"
+          className="object-cover bg-transparent"
         />
         <a
           href="https://www.buddytree.org/home"

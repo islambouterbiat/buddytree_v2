@@ -62,13 +62,13 @@ const HomePage = ({ data }: any) => {
   }, [])
 
   return (
-    <div className={`min-h-screen ${styles.homepage}`}>
+    <div className={`min-h-screen text-2xl ${styles.homepage}`}>
       <Head>
         <title>BuddyTree</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="mx-auto w-full ">
+      <div id='main' className="mx-auto w-full ">
         {go && (
           <ModalVideo
             channel="youtube"
@@ -281,7 +281,7 @@ const HomePage = ({ data }: any) => {
               <h1 className="text-3xl font-bold text-DarkBlue">
                 Upcoming Hangouts
               </h1>
-              <div className="scrolltype flex w-full flex-nowrap gap-8 overflow-x-auto pt-6 pb-12 md:pt-20">
+              <div className={`${styles.scrolltype} flex w-full flex-nowrap gap-8 overflow-x-auto pt-6 pb-12 md:pt-20`}>
                 {data.map((hangout: any) => (
                   <HangoutCard key={hangout.id} hangout={hangout} />
                 ))}
@@ -394,7 +394,7 @@ const HomePage = ({ data }: any) => {
             </div>
           </div>
         </section>
-      </main>
+      </div>
     </div>
   )
 }
